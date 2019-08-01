@@ -49,9 +49,7 @@ Navigate the turtlebot to reach three different goals(in 0.5m distance) in 5mins
 
 `self.pub_vel = rospy.Publisher('/cmd_vel', Twist, queue_size=20)`
 
-</br>
-![nodes](presentation/rosgraph.png)
-</br>
+![nodes](https://github.com/SiyiDai/ARM-project/blob/master/presentation/rosgraph.png)
 
 ### Call-back functions:
 - `goals_clbk(self, msg)`
@@ -61,9 +59,8 @@ In the initialization part, the `goals[]` has been defined as list to store the 
 - `laser_clbk(self, msg)`      
 
 From laser data, with the division from mini_project into 5 areas
-</br>
-![regions](presentation/laser.png)
-</br>
+
+![regions](https://github.com/SiyiDai/ARM-project/blob/master/presentation/laser.png)
 
 - `position_clbk(self, msg)`
 
@@ -93,9 +90,8 @@ Use formula from math library, to calculate:
 2. angle between turtlebot and the goals
 3. the diffrence between the angle needed and the current yaw turtlebot has
 
-</br>
-![cal](presentation/cal.png)
-</br>
+
+![cal](https://github.com/SiyiDai/ARM-project/blob/master/presentation/cal.png)
 
 Code for the calculating:
   ```python
@@ -107,15 +103,13 @@ self.diff[self.i] = self.angle[self.i] - self.yaw
 ### obstacle_avoid
 - If there is stuff near in the front region, turn right with low speed. 
 
-</br>
-![turn](presentation/turn.png)
-</br>
+
+![turn](https://github.com/SiyiDai/ARM-project/blob/master/presentation/turn.png)
+
 
 - If there is no stuff near in the front region, but in front right, or in front left, turn slightly to the opposite with low speed.
 
-</br>
-![sli](presentation/slight.png)
-</br>
+![sli](https://github.com/SiyiDai/ARM-project/blob/master/presentation/slight.png)
 
 - If there is no stuff near around, turn the state to ture, the navigate function can work.
 
@@ -130,9 +124,8 @@ self.diff[self.i] = self.angle[self.i] - self.yaw
 
 ### goal_check
 Check whether the goal has been reached in 0.5m radias.
-</br>
-![reach](presentation/reach.png)
-</br>
+
+![reach](https://github.com/SiyiDai/ARM-project/blob/master/presentation/reach.png)
 
 ### go2goal
 The main function: while not all the goals are reached, detect which goal has been reached by order, calculate the diff and do navigate and goal check.
